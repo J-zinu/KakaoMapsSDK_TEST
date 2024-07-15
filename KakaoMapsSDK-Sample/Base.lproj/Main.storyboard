@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLK-1q-a2d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Simple Map View-->
+        <scene sceneID="2Tn-cP-egR">
+            <objects>
+                <viewController storyboardIdentifier="SimpleMapView" id="W5N-s0-gc0" customClass="SimpleMapView" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eX9-SP-8xC" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VyD-vy-OYL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DnG-KI-Yic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3767" y="621"/>
+        </scene>
+        <!--Camera Manipulate-->
+        <scene sceneID="di1-G0-Goz">
+            <objects>
+                <viewController storyboardIdentifier="CameraManipulate" id="hND-SE-jdO" customClass="CameraManipulate" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IxI-5z-h7s" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RrN-9r-g4L">
+                                <rect key="frame" x="182" y="70" width="51" height="31"/>
+                                <connections>
+                                    <action selector="cameraAnimationSwitchChanged:" destination="hND-SE-jdO" eventType="valueChanged" id="2Mj-jo-GST"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvk-oB-Xhb">
+                                <rect key="frame" x="20" y="75" width="140" height="21"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Rotation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trt-im-WPg">
+                                <rect key="frame" x="20" y="114" width="104" height="21"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4c-Xb-q9r">
+                                <rect key="frame" x="182" y="109" width="51" height="31"/>
+                                <connections>
+                                    <action selector="autoElevationSwitchChanged:" destination="hND-SE-jdO" eventType="valueChanged" id="uAE-iv-eLr"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cW-vu-Qhr">
+                                <rect key="frame" x="364" y="756" width="30" height="30"/>
+                                <state key="normal" title="B">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonBClicked:" destination="hND-SE-jdO" eventType="touchUpInside" id="ogz-ey-9R0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y75-r7-AK0">
+                                <rect key="frame" x="364" y="794" width="30" height="30"/>
+                                <state key="normal" title="C">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonCClicked:" destination="hND-SE-jdO" eventType="touchUpInside" id="dGP-Po-ypk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKQ-23-fdz">
+                                <rect key="frame" x="364" y="832" width="30" height="30"/>
+                                <state key="normal" title="D">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDCilcked:" destination="hND-SE-jdO" eventType="touchUpInside" id="29l-Ha-lrK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpS-5b-mKQ">
+                                <rect key="frame" x="364" y="718" width="30" height="30"/>
+                                <state key="normal" title="A">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAClicked:" destination="hND-SE-jdO" eventType="touchUpInside" id="b4B-0Q-tsb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CFY-ef-g2F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hvk-oB-Xhb" firstAttribute="leading" secondItem="trt-im-WPg" secondAttribute="leading" id="1YH-Pr-fes"/>
+                            <constraint firstItem="RrN-9r-g4L" firstAttribute="leading" secondItem="Hvk-oB-Xhb" secondAttribute="trailing" constant="22" id="3gV-Dr-575"/>
+                            <constraint firstItem="TpS-5b-mKQ" firstAttribute="trailing" secondItem="IxI-5z-h7s" secondAttribute="trailingMargin" id="9Ln-nu-aIB"/>
+                            <constraint firstItem="9cW-vu-Qhr" firstAttribute="top" secondItem="TpS-5b-mKQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Eq7-mT-qON"/>
+                            <constraint firstItem="y75-r7-AK0" firstAttribute="top" secondItem="9cW-vu-Qhr" secondAttribute="bottom" constant="8" symbolic="YES" id="PgM-IJ-Ty4"/>
+                            <constraint firstItem="TpS-5b-mKQ" firstAttribute="leading" secondItem="9cW-vu-Qhr" secondAttribute="leading" id="RQB-AG-T7f"/>
+                            <constraint firstItem="RrN-9r-g4L" firstAttribute="leading" secondItem="n4c-Xb-q9r" secondAttribute="leading" id="RrN-in-C2M"/>
+                            <constraint firstItem="n4c-Xb-q9r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="trt-im-WPg" secondAttribute="trailing" constant="8" symbolic="YES" id="UFe-lg-EqJ"/>
+                            <constraint firstItem="n4c-Xb-q9r" firstAttribute="top" secondItem="RrN-9r-g4L" secondAttribute="bottom" constant="8" id="UmI-6N-s52"/>
+                            <constraint firstItem="trt-im-WPg" firstAttribute="centerY" secondItem="n4c-Xb-q9r" secondAttribute="centerY" id="Zma-LU-iZu"/>
+                            <constraint firstItem="Hvk-oB-Xhb" firstAttribute="top" secondItem="CFY-ef-g2F" secondAttribute="top" constant="27" id="gVR-NI-hqb"/>
+                            <constraint firstItem="Hvk-oB-Xhb" firstAttribute="leading" secondItem="IxI-5z-h7s" secondAttribute="leadingMargin" id="kgG-Wf-hay"/>
+                            <constraint firstItem="y75-r7-AK0" firstAttribute="bottom" secondItem="CFY-ef-g2F" secondAttribute="bottom" constant="-38" id="kxq-Km-s9d"/>
+                            <constraint firstItem="9cW-vu-Qhr" firstAttribute="leading" secondItem="y75-r7-AK0" secondAttribute="leading" id="pE6-4O-hrZ"/>
+                            <constraint firstItem="Hvk-oB-Xhb" firstAttribute="centerY" secondItem="RrN-9r-g4L" secondAttribute="centerY" id="ruq-6K-hcV"/>
+                            <constraint firstItem="sKQ-23-fdz" firstAttribute="leading" secondItem="y75-r7-AK0" secondAttribute="leading" id="uL8-2Q-SZG"/>
+                            <constraint firstItem="sKQ-23-fdz" firstAttribute="bottom" secondItem="CFY-ef-g2F" secondAttribute="bottom" id="zk7-be-kFu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="autoElevationSwitch" destination="n4c-Xb-q9r" id="gYs-5p-OoP"/>
+                        <outlet property="cameraAnimationSwitch" destination="RrN-9r-g4L" id="fBI-hB-dPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKq-DS-HhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746" y="621"/>
+        </scene>
+        <!--Roadview Sample-->
+        <scene sceneID="LrD-VQ-GJO">
+            <objects>
+                <viewController storyboardIdentifier="RoadviewSample" id="hlT-A3-EnF" customClass="RoadviewSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mTd-GK-vWg" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6K-02-VmC">
+                                <rect key="frame" x="355" y="48" width="59" height="30"/>
+                                <state key="normal" title="Minimap"/>
+                                <connections>
+                                    <action selector="minimapButtonClicked:" destination="hlT-A3-EnF" eventType="touchUpInside" id="ZRg-S3-ita"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PtD-om-y4A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PtD-om-y4A" firstAttribute="trailing" secondItem="A6K-02-VmC" secondAttribute="trailing" id="G6e-k3-o82"/>
+                            <constraint firstItem="A6K-02-VmC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PtD-om-y4A" secondAttribute="leading" id="Jqc-3C-1EY"/>
+                            <constraint firstItem="A6K-02-VmC" firstAttribute="top" secondItem="PtD-om-y4A" secondAttribute="top" id="uxv-uV-GIi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="minimapButton" destination="A6K-02-VmC" id="pFf-PI-EMb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNB-5P-8eg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3768" y="2106"/>
+        </scene>
+        <!--Storeview Sample-->
+        <scene sceneID="KdH-dS-p6u">
+            <objects>
+                <viewController storyboardIdentifier="StoreviewSample" id="iGl-vJ-98m" customClass="StoreviewSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="so5-35-uTa" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDp-uk-lrd">
+                                <rect key="frame" x="372" y="48" width="39" height="30"/>
+                                <state key="normal" title="평면도"/>
+                                <connections>
+                                    <action selector="planButtonClicked:" destination="iGl-vJ-98m" eventType="touchUpInside" id="A0D-n4-vGD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E2q-lj-Ba3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CDp-uk-lrd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E2q-lj-Ba3" secondAttribute="leading" id="4pi-RY-kyU"/>
+                            <constraint firstItem="CDp-uk-lrd" firstAttribute="top" secondItem="E2q-lj-Ba3" secondAttribute="top" id="OPv-SA-Ao1"/>
+                            <constraint firstItem="E2q-lj-Ba3" firstAttribute="trailing" secondItem="CDp-uk-lrd" secondAttribute="trailing" constant="3" id="cPb-b7-8bx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBH-Ab-v28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2846" y="2106"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="3FW-Xb-kmZ">
+            <objects>
+                <viewController id="9OW-NZ-CRA" customClass="SecondViewHostingController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ITy-Cy-Shp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pof-m8-Adv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="la5-wC-9Ne"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9tc-VD-LcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1768" y="1347"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="al3-6A-fbg">
+            <objects>
+                <viewController id="byA-tH-u3D" customClass="FirstViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NJJ-2H-KM4" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fUe-O2-L1e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="gpG-2o-qhr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0M-mK-WiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1767" y="622"/>
+        </scene>
+        <!--Tab Bar Sample-->
+        <scene sceneID="8vG-0s-qgw">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarSample" id="ucD-xU-Li8" customClass="TabBarSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="32J-qu-XW1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="byA-tH-u3D" kind="relationship" relationship="viewControllers" id="xpy-Pd-EGX"/>
+                        <segue destination="9OW-NZ-CRA" kind="relationship" relationship="viewControllers" id="Rei-do-Kk1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ik4-AD-tU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2846" y="622"/>
+        </scene>
+        <!--Sample Container View Controller-->
+        <scene sceneID="LgO-fB-TeO">
+            <objects>
+                <viewController storyboardIdentifier="SampleContainer" id="WRa-Eu-rfx" customClass="SampleContainerViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nb1-RQ-mt1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93w-Oi-EUj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="2jB-3h-ihc" kind="embed" id="48c-bl-Q4v"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qLE-Kl-cou"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hS-SW-yyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2846.376811594203" y="-186.16071428571428"/>
+        </scene>
+        <!--Samples-->
+        <scene sceneID="nmw-ua-cQR">
+            <objects>
+                <tableViewController id="CeG-ec-G7z" customClass="SamplesTableViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="rBs-qX-bGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleCell" textLabel="Mml-vF-fcg" detailTextLabel="nXc-ub-HdH" style="IBUITableViewCellStyleSubtitle" id="M8M-hC-ekU">
+                                <rect key="frame" x="20" y="55.5" width="374" height="52.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8M-hC-ekU" id="w7V-1o-dRw">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="52.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" id="Mml-vF-fcg">
+                                            <rect key="frame" x="8" y="7.5" width="30" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" id="nXc-ub-HdH">
+                                            <rect key="frame" x="8" y="28" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CeG-ec-G7z" id="Cso-8q-CNO"/>
+                            <outlet property="delegate" destination="CeG-ec-G7z" id="8Il-gb-qan"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Samples" id="568-u9-zTl"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SgX-nf-v3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1927.5362318840582" y="-833.03571428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dom-Dt-ZtL">
+            <objects>
+                <navigationController id="HTS-Hw-aqK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VZY-DG-rfX">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CeG-ec-G7z" kind="relationship" relationship="rootViewController" id="8Kl-zJ-d8h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20X-Z9-hLq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2847" y="-833"/>
+        </scene>
+        <!--Sample Split View Controller-->
+        <scene sceneID="n1n-ho-J3v">
+            <objects>
+                <splitViewController id="qLK-1q-a2d" customClass="SampleSplitViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="HTS-Hw-aqK" kind="relationship" relationship="masterViewController" id="n4k-Ac-ERZ"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Twq-yV-3Z0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3766" y="-510"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jw4-3n-54A">
+            <objects>
+                <viewController id="2jB-3h-ihc" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Z8c-kd-jah">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FwJ-5S-Zfa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Peq-Bo-Lyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1899" y="-184"/>
+        </scene>
+        <!--BasicGUI Sample-->
+        <scene sceneID="lLq-mZ-HMZ">
+            <objects>
+                <viewController storyboardIdentifier="BasicGUISample" id="Uzh-2A-XBl" customClass="BasicGUISample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="txT-CQ-Q4I" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ffd-LZ-dLp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5y-PO-2wG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3767" y="2869"/>
+        </scene>
+        <!--Info Window Sample-->
+        <scene sceneID="aRu-Ha-TMr">
+            <objects>
+                <viewController storyboardIdentifier="InfoWindowSample" id="dvy-2Z-9wJ" customClass="InfoWindowSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pl4-GA-fzm" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Rdi-2l-nY8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lse-0b-Olr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2848" y="2869"/>
+        </scene>
+        <!--SpriteGUI Sample-->
+        <scene sceneID="9mL-wg-8Bu">
+            <objects>
+                <viewController storyboardIdentifier="SpriteGUISample" id="Sgs-re-7d5" customClass="SpriteGUISample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3E8-S8-Qvn" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ij1-6s-qlm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JvR-vQ-NGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971" y="2869"/>
+        </scene>
+        <!--SimplePOI-->
+        <scene sceneID="NTb-Ic-UUB">
+            <objects>
+                <viewController storyboardIdentifier="SimplePOI" id="fCE-Gb-wx2" customClass="SimplePOI" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JaI-4q-6MG" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iHj-Us-DMa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alW-s9-gpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3767" y="3570"/>
+        </scene>
+        <!--Badge Sample-->
+        <scene sceneID="iNr-TL-nNr">
+            <objects>
+                <viewController storyboardIdentifier="POIBadgeSample" id="FEy-8T-VCv" customClass="POIBadgeSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1vE-q5-n8o" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cMV-9i-rfQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GLS-YI-UnT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2846" y="3570"/>
+        </scene>
+        <!--Simple Shape-->
+        <scene sceneID="jLP-1v-bPg">
+            <objects>
+                <viewController storyboardIdentifier="SimpleShape" id="10B-YI-SxT" customClass="SimpleShape" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gi2-HT-poH" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NyO-Gb-wYN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4c-Nt-i9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3768" y="4292"/>
+        </scene>
+        <!--Per Level Styled Shape Sample-->
+        <scene sceneID="Mda-SM-YN3">
+            <objects>
+                <viewController storyboardIdentifier="PerLevelStyledShapeSample" id="znD-d2-5U8" customClass="PerLevelStyledShapeSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p5K-5F-RkU" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="x7x-M1-GTp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hU4-Qr-HeR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2846" y="4292"/>
+        </scene>
+        <!--Dim Screen Sample-->
+        <scene sceneID="Nqx-BN-0ZW">
+            <objects>
+                <viewController storyboardIdentifier="DimScreenSample" id="kdQ-07-kJ1" customClass="DimScreenSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYW-gB-Ry6" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yUp-On-hxs">
+                                <rect key="frame" x="345" y="831" width="51" height="31"/>
+                                <connections>
+                                    <action selector="dimScreenSwitchChanged:" destination="kdQ-07-kJ1" eventType="valueChanged" id="k6q-GF-dXy"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aWP-Af-yQx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yUp-On-hxs" firstAttribute="bottom" secondItem="aWP-Af-yQx" secondAttribute="bottom" id="5Jf-al-nJn"/>
+                            <constraint firstItem="aWP-Af-yQx" firstAttribute="trailing" secondItem="yUp-On-hxs" secondAttribute="trailing" constant="20" id="8KX-J6-3Y1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dimScreenSwitch" destination="yUp-On-hxs" id="lJ1-RU-euJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwP-tv-bqu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971" y="4292"/>
+        </scene>
+        <!--Per Level Styles Sample-->
+        <scene sceneID="IBd-3d-Nj7">
+            <objects>
+                <viewController storyboardIdentifier="POIPerLevelStylesSample" id="cgi-FX-Yjt" customClass="POIPerLevelStylesSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dGL-eO-sZv" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DdO-mq-NTu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7j-Hr-mjY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1899" y="3570"/>
+        </scene>
+        <!--Style Change Sample-->
+        <scene sceneID="Pc6-hG-fPz">
+            <objects>
+                <viewController storyboardIdentifier="POIStyleChangeSample" id="5HS-5V-TZg" customClass="POIStyleChangeSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y3W-8C-JzP" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z85-BN-7sr">
+                                <rect key="frame" x="0.0" y="832" width="30" height="30"/>
+                                <state key="normal" title="변경"/>
+                                <connections>
+                                    <action selector="changeButtonClicked:" destination="5HS-5V-TZg" eventType="touchUpInside" id="g9L-Lj-0kW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aKN-yg-ivu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z85-BN-7sr" firstAttribute="bottom" secondItem="aKN-yg-ivu" secondAttribute="bottom" id="HNh-Og-Xkr"/>
+                            <constraint firstItem="Z85-BN-7sr" firstAttribute="leading" secondItem="aKN-yg-ivu" secondAttribute="leading" id="v1z-V2-3es"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Wp-Ef-OEa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971" y="3570"/>
+        </scene>
+        <!--LodPOI Sample-->
+        <scene sceneID="hIn-g0-ecX">
+            <objects>
+                <viewController storyboardIdentifier="LodPOISample" id="6Oc-uW-Lkr" customClass="LodPOISample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Mq-gL-rhp" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GdS-jC-Bhp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpD-ei-JD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="3570"/>
+        </scene>
+        <!--MovingPOI Sample-->
+        <scene sceneID="wUy-h4-R4C">
+            <objects>
+                <viewController storyboardIdentifier="MovingPOISample" id="7qJ-RZ-FA2" customClass="MovingPOISample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ro2-ZB-gg3" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sFr-FQ-Arw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9w0-en-4nh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1651" y="3570"/>
+        </scene>
+        <!--Current PositionPOI-->
+        <scene sceneID="jyP-Uz-Ymd">
+            <objects>
+                <viewController storyboardIdentifier="CurrentPositionPOI" id="5ym-ET-nCq" customClass="CurrentPositionPOI" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SDJ-zR-Wdn" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9fs-vi-gTW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEs-FL-Tdg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971" y="5711"/>
+        </scene>
+        <!--Animation Sample-->
+        <scene sceneID="z14-RS-2tS">
+            <objects>
+                <viewController storyboardIdentifier="POIAnimationSample" id="baI-6Y-zEg" customClass="POIAnimationSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BCg-fz-nyT" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지도판을 누르면 POI가 추가됩니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6S-9d-e5q">
+                                <rect key="frame" x="11" y="841" width="392" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rBY-DB-yAg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M6S-9d-e5q" firstAttribute="bottom" secondItem="rBY-DB-yAg" secondAttribute="bottom" id="nsD-eu-Opc"/>
+                            <constraint firstItem="M6S-9d-e5q" firstAttribute="centerX" secondItem="BCg-fz-nyT" secondAttribute="centerX" id="weZ-Dj-G4x"/>
+                            <constraint firstItem="M6S-9d-e5q" firstAttribute="leading" secondItem="rBY-DB-yAg" secondAttribute="leading" constant="11" id="wuQ-12-Coc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mbl-2J-Egx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2506" y="3570"/>
+        </scene>
+        <!--Wave Text Sample-->
+        <scene sceneID="GIG-uY-3gj">
+            <objects>
+                <viewController storyboardIdentifier="WaveTextSample" id="T68-kq-SRX" customClass="WaveTextSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Te9-tR-HV4" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0y1-we-U6m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hk-kn-oAH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3420" y="3570"/>
+        </scene>
+        <!--Route Line Sample-->
+        <scene sceneID="IT1-v5-TrU">
+            <objects>
+                <viewController storyboardIdentifier="RouteLineSample" id="f4z-0e-TMd" customClass="RouteLineSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Hd-I3-mPr" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VQL-bS-Tf7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmm-wt-fw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3767" y="4993"/>
+        </scene>
+        <!--Polyline Sample-->
+        <scene sceneID="Iq2-YE-4nr">
+            <objects>
+                <viewController storyboardIdentifier="PolylineSample" id="ZSf-wZ-NpQ" customClass="PolylineSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KYn-ik-4E1" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZL5-Mu-01r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaE-Fv-Yim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3768" y="7190"/>
+        </scene>
+        <!--Info Window Animation Sample-->
+        <scene sceneID="38A-vx-WlN">
+            <objects>
+                <viewController storyboardIdentifier="InfoWindowAnimationSample" id="jH1-Dg-rYj" customClass="InfoWindowAnimationSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EXQ-U2-CpA" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bNd-n1-A8c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAg-In-lhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1878" y="2869"/>
+        </scene>
+        <!--ChangePOI Text And Style Sample-->
+        <scene sceneID="Vfv-NP-gzb">
+            <objects>
+                <viewController storyboardIdentifier="ChangePOITextAndStyleSample" id="zcA-qm-DeA" customClass="ChangePOITextAndStyleSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dCF-de-nPd" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egx-Qg-YnO">
+                                <rect key="frame" x="0.0" y="832" width="30" height="30"/>
+                                <state key="normal" title="변경"/>
+                                <connections>
+                                    <action selector="changeButtonClicked:" destination="zcA-qm-DeA" eventType="touchUpInside" id="rAU-aD-gyf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xOA-ZG-1Jq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="egx-Qg-YnO" firstAttribute="leading" secondItem="xOA-ZG-1Jq" secondAttribute="leading" id="mIs-mS-RN4"/>
+                            <constraint firstItem="egx-Qg-YnO" firstAttribute="bottom" secondItem="xOA-ZG-1Jq" secondAttribute="bottom" id="rLL-jW-ueO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FP2-Sj-9uD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="3570"/>
+        </scene>
+        <!--Change Wave Text Data And Style Sample-->
+        <scene sceneID="83o-IL-eP3">
+            <objects>
+                <viewController storyboardIdentifier="ChangeWaveTextDataAndStyleSample" id="FcL-a3-pnY" customClass="ChangeWaveTextDataAndStyleSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9v-31-p9L" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWC-Fs-wle">
+                                <rect key="frame" x="28" y="832" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="변경"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="FcL-a3-pnY" eventType="touchUpInside" id="nLv-24-U0N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qL5-v7-PMh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1b-yx-5NI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328" y="3570"/>
+        </scene>
+        <!--Change Polygon Style And Data Sample-->
+        <scene sceneID="rTm-Wk-t60">
+            <objects>
+                <viewController storyboardIdentifier="ChangePolygonStyleAndDataSample" id="UcY-Jl-P3x" customClass="ChangePolygonStyleAndDataSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qev-xr-xrv" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-Ba-XGO">
+                                <rect key="frame" x="20" y="832" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="153" id="LKT-Oh-ZSU"/>
+                                    <constraint firstAttribute="height" constant="30" id="sgg-1k-V2A"/>
+                                </constraints>
+                                <state key="normal" title="Update PolygonShape"/>
+                                <connections>
+                                    <action selector="onUpdateBtnClicked:" destination="UcY-Jl-P3x" eventType="touchUpInside" id="Sou-0O-Xtq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5G7-iO-J6c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IGa-Ba-XGO" firstAttribute="leading" secondItem="5G7-iO-J6c" secondAttribute="leading" constant="20" id="1Px-ib-koe"/>
+                            <constraint firstItem="5G7-iO-J6c" firstAttribute="bottom" secondItem="IGa-Ba-XGO" secondAttribute="bottom" id="31f-Th-Ubt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpg-W5-k8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1928" y="4292"/>
+        </scene>
+        <!--Change Polyline Data And Style Sample-->
+        <scene sceneID="GK0-LC-oUj">
+            <objects>
+                <viewController storyboardIdentifier="ChangePolylineDataAndStyleSample" id="Wbw-Ga-Q0H" customClass="ChangePolylineDataAndStyleSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kZP-oy-1D4" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkT-IQ-LWL">
+                                <rect key="frame" x="20" y="832" width="108" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Is4-nX-Msy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="UCV-qc-eh8"/>
+                                </constraints>
+                                <state key="normal" title="Polyline Update"/>
+                                <connections>
+                                    <action selector="onUpdateBtnClicked:" destination="Wbw-Ga-Q0H" eventType="touchUpInside" id="YRb-Kv-R8G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GEG-GN-Ng5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hkT-IQ-LWL" firstAttribute="leading" secondItem="GEG-GN-Ng5" secondAttribute="leading" constant="20" id="aTR-rv-qp3"/>
+                            <constraint firstItem="GEG-GN-Ng5" firstAttribute="bottom" secondItem="hkT-IQ-LWL" secondAttribute="bottom" id="nX9-zV-4ZV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXm-dO-UCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2849" y="7190"/>
+        </scene>
+        <!--Change Enabled Route Style Sample-->
+        <scene sceneID="ge0-6I-ziI">
+            <objects>
+                <viewController storyboardIdentifier="ChangeEnabledRouteStyleSample" id="CXH-MG-KUS" customClass="ChangeEnabledRouteStyleSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7xI-Ej-HtB" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="14O-IC-gjb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rrd-D1-ca5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2849" y="4993"/>
+        </scene>
+        <!--Change Route Style And Data Sample-->
+        <scene sceneID="KZz-9i-PrF">
+            <objects>
+                <viewController storyboardIdentifier="ChangeRouteStyleAndDataSample" id="Zwa-5J-vyx" customClass="ChangeRouteStyleAndDataSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fnG-ZL-ilW" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GoS-nf-DpY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cF6-WJ-OUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1930" y="4993"/>
+        </scene>
+        <!--Jeju Bus Sample-->
+        <scene sceneID="GLf-ax-YfI">
+            <objects>
+                <viewController storyboardIdentifier="JejuBusSample" id="8I8-Hl-9LU" customClass="JejuBusSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gBb-bF-upp" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FAc-ya-xx2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nuw-0B-p4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3768" y="5711"/>
+        </scene>
+        <!--Shared Location Sample-->
+        <scene sceneID="RYw-ut-3lZ">
+            <objects>
+                <viewController storyboardIdentifier="SharedLocationSample" id="lLZ-H9-LNm" customClass="SharedLocationSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c4B-sA-4HU" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gtk-kT-QTd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uui-kJ-dYy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2846" y="5711"/>
+        </scene>
+        <!--Poi Click Service Sample-->
+        <scene sceneID="mba-iK-3hi">
+            <objects>
+                <viewController storyboardIdentifier="PoiClickServiceSample" id="dbi-wb-2ek" customClass="PoiClickServiceSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gfw-Rh-w0o" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="T9M-3c-sMU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NY3-cz-1ZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1901" y="5711"/>
+        </scene>
+        <!--Camera Event Handler Sample-->
+        <scene sceneID="fWR-pJ-nrk">
+            <objects>
+                <viewController storyboardIdentifier="CameraEventHandlerSample" id="We5-Dg-NcF" customClass="CameraEventHandlerSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wwe-xH-scy" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkt-z5-d8R">
+                                <rect key="frame" x="20" y="824" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="카메라 이동"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="We5-Dg-NcF" eventType="touchUpInside" id="8KS-2w-wCe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OAU-qp-lsF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYG-IN-Mfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3768" y="6449"/>
+        </scene>
+        <!--Tapped Event Handler-->
+        <scene sceneID="0Fy-y4-Wml">
+            <objects>
+                <viewController storyboardIdentifier="TappedEventHandler" id="a50-GA-eIA" customClass="TappedEventHandler" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mXz-7z-6bU" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="k1k-Zs-4Dc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJU-wr-et5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2849.275362318841" y="6448.6607142857138"/>
+        </scene>
+        <!--Api Callback Sample-->
+        <scene sceneID="BhJ-vc-9Cr">
+            <objects>
+                <viewController storyboardIdentifier="ApiCallbackSample" id="n7l-Ky-8gU" customClass="ApiCallbackSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="reQ-hX-Wjb" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hu4-nM-YHJ">
+                                <rect key="frame" x="31" y="832" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="paY-Vu-gnV"/>
+                                    <constraint firstAttribute="height" constant="30" id="xZF-pb-1Oy"/>
+                                </constraints>
+                                <state key="normal" title="Poi 추가"/>
+                                <connections>
+                                    <action selector="addPois:" destination="n7l-Ky-8gU" eventType="touchUpInside" id="0Q2-tB-OVi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dE8-Lg-bll"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hu4-nM-YHJ" firstAttribute="leading" secondItem="dE8-Lg-bll" secondAttribute="leading" constant="31" id="c3K-DD-UDi"/>
+                            <constraint firstItem="dE8-Lg-bll" firstAttribute="bottom" secondItem="Hu4-nM-YHJ" secondAttribute="bottom" id="xEQ-YD-FXS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61E-JB-sXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1930" y="6449"/>
+        </scene>
+        <!--Map Polyline Sample-->
+        <scene sceneID="2eb-nL-bto">
+            <objects>
+                <viewController storyboardIdentifier="MapPolylineSample" id="w8T-16-9v0" customClass="MapPolylineSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bue-b6-EnF" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QPX-LG-Oud"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXz-Ld-Odr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1930" y="7190"/>
+        </scene>
+        <!--Simple Map Polygon Shape Sample-->
+        <scene sceneID="HLt-cu-Fmu">
+            <objects>
+                <viewController storyboardIdentifier="SimpleMapPolygonShapeSample" id="L8m-6u-zhd" customClass="SimpleMapPolygonShapeSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kUa-Rt-P2b" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WhC-RL-T1L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j51-YE-XHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="4292"/>
+        </scene>
+        <!--Margin Test Sample-->
+        <scene sceneID="I4H-qS-xsy">
+            <objects>
+                <viewController storyboardIdentifier="MarginTestSample" id="hVd-iH-PRN" customClass="MarginTestSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xlg-Ea-NXL" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6kI-TS-WYC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktn-aU-n8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="621"/>
+        </scene>
+        <!--Poi Pixel Offset Sample-->
+        <scene sceneID="nIv-4K-5La">
+            <objects>
+                <viewController storyboardIdentifier="PoiPixelOffsetSample" id="jqb-iv-eFv" customClass="PoiPixelOffsetSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zUN-9o-MzA" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYk-8i-1hC">
+                                <rect key="frame" x="28" y="832" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="변경"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="jqb-iv-eFv" eventType="touchUpInside" id="ouF-nr-1XE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pK6-cB-9M3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gai-zY-PsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5288" y="3570"/>
+        </scene>
+        <!--Change Base Map Sample-->
+        <scene sceneID="PAV-5B-mA3">
+            <objects>
+                <viewController storyboardIdentifier="ChangeBaseMapSample" id="pu3-uh-JcB" customClass="ChangeBaseMapSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AO2-YD-PlP" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZC2-iE-tdb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sef-bT-6al" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3767" y="7976"/>
+        </scene>
+        <!--Overlay Map Sample-->
+        <scene sceneID="Q12-04-HBX">
+            <objects>
+                <viewController storyboardIdentifier="OverlayMapSample" id="L0d-nH-k2Y" customClass="OverlayMapSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LCF-JN-Qe9" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wfW-6R-bhS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6GS-4G-vPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2849" y="7975"/>
+        </scene>
+        <!--Polyline Cap Sample-->
+        <scene sceneID="lnd-th-K6v">
+            <objects>
+                <viewController storyboardIdentifier="PolylineCapSample" id="dy4-Sf-TAj" customClass="PolylineCapSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ql8-Mr-5Cw" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="whG-MQ-YY5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84M-SR-BUU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971" y="7190"/>
+        </scene>
+        <!--Building Height Sample-->
+        <scene sceneID="AoH-a1-0hJ">
+            <objects>
+                <viewController storyboardIdentifier="BuildingHeightSample" id="H3S-eK-cH1" customClass="BuildingHeightSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0XR-wi-pLo" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OJP-vs-w14"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Avi-lE-9y7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="621"/>
+        </scene>
+        <!--Recovery Poi Sample-->
+        <scene sceneID="Coi-PK-qtd">
+            <objects>
+                <viewController storyboardIdentifier="RecoveryPoiSample" id="yjI-oo-ZCr" customClass="RecoveryPoiSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bNC-mB-h1c" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qW5-au-1F9">
+                                <rect key="frame" x="362" y="832" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AYT-0f-eIu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="w5d-aV-GWJ"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="Vj2-vt-he0" kind="push" id="REd-NM-Ks1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bCQ-kH-D6I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bCQ-kH-D6I" firstAttribute="trailing" secondItem="qW5-au-1F9" secondAttribute="trailing" constant="20" id="dWl-vC-TDg"/>
+                            <constraint firstItem="bCQ-kH-D6I" firstAttribute="bottom" secondItem="qW5-au-1F9" secondAttribute="bottom" id="sPm-zv-fBr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SoD-pN-aee"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUP-ue-WJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6180" y="3570"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="CY6-E4-f0d">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="Vj2-vt-he0" customClass="SecondViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GK2-XK-YDd" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DLS-gw-hdE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QaC-cC-Ec2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWv-qU-P0J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6146" y="4270"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nRA-fx-XUF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b2Q-U2-5r7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="evW-6A-NXg">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yjI-oo-ZCr" kind="relationship" relationship="rootViewController" id="lMU-Uy-Znb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUy-Xa-TwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6180" y="2869"/>
+        </scene>
+        <!--First Map View Controller-->
+        <scene sceneID="ZjX-wo-NfD">
+            <objects>
+                <viewController storyboardIdentifier="FirstMapViewController" id="xlL-Mg-Z1Z" customClass="FirstMapViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KHh-9Z-pR8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG5-3k-YGL">
+                                <rect key="frame" x="362" y="783" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="Eov-1a-ra5"/>
+                                    <constraint firstAttribute="height" constant="30" id="NgJ-4O-SqK"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="onNextClicked:" destination="xlL-Mg-Z1Z" eventType="touchUpInside" id="WWr-SG-8DE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLQ-xS-8jY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HLQ-xS-8jY" firstAttribute="bottom" secondItem="nG5-3k-YGL" secondAttribute="bottom" id="5EE-KK-hVA"/>
+                            <constraint firstItem="HLQ-xS-8jY" firstAttribute="trailing" secondItem="nG5-3k-YGL" secondAttribute="trailing" constant="20" id="h4V-1p-jAS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhF-07-mDF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2121.739130434783" y="620.75892857142856"/>
+        </scene>
+        <!--Second Map View Controller-->
+        <scene sceneID="lRM-xT-8Ku">
+            <objects>
+                <viewController storyboardIdentifier="SecondMapViewController" id="9li-yU-JIS" customClass="SecondMapViewController" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3oD-RU-Thg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KVb-VH-dvN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LEf-wT-mVJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ve0-53-v2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="1328"/>
+        </scene>
+        <!--Info Window Layout Sample-->
+        <scene sceneID="Kuf-gW-6rh">
+            <objects>
+                <viewController storyboardIdentifier="InfoWindowLayoutSample" id="QrU-6H-xwA" customClass="InfoWindowLayoutSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pFg-Sp-Fwy" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YgQ-Tj-I7c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pq2-Ol-U2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="2869"/>
+        </scene>
+        <!--Map Polygon Shape Sample-->
+        <scene sceneID="s94-GP-u09">
+            <objects>
+                <viewController storyboardIdentifier="MapPolygonShapeSample" id="Ckk-ET-Mjr" customClass="MapPolygonShapeSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1kQ-LO-Fkx" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xRr-Gh-WtD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cfh-ju-Eqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="5711"/>
+        </scene>
+        <!--Curved Route Sample-->
+        <scene sceneID="WSO-Oh-QAC">
+            <objects>
+                <viewController storyboardIdentifier="CurvedRouteSample" id="13w-7v-GCU" customClass="CurvedRouteSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iy7-rG-7ej" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RZJ-RF-iuF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6G-gm-gOx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1067" y="4993"/>
+        </scene>
+        <!--Poi Transition Sample-->
+        <scene sceneID="pkR-6v-FMO">
+            <objects>
+                <viewController storyboardIdentifier="PoiTransitionSample" id="pGv-wN-PrY" customClass="PoiTransitionSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhj-oG-fQz" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-yR-FP2">
+                                <rect key="frame" x="345" y="754" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onTextEntranceSwitch:" destination="pGv-wN-PrY" eventType="valueChanged" id="Klh-AA-HeR"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qb4-SE-Dwg">
+                                <rect key="frame" x="345" y="801" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onTextExitSwitch:" destination="pGv-wN-PrY" eventType="valueChanged" id="N94-cK-xhl"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-TG-OW5">
+                                <rect key="frame" x="345" y="708" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onIconExitSwith:" destination="pGv-wN-PrY" eventType="valueChanged" id="SSS-tP-5xv"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXZ-MM-QQ2">
+                                <rect key="frame" x="345" y="658" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onIconEntranceSwitch:" destination="pGv-wN-PrY" eventType="valueChanged" id="K0H-fw-Ldq"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iconEntrance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTi-H4-UqF">
+                                <rect key="frame" x="239" y="663" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iconExit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq3-SW-gIK">
+                                <rect key="frame" x="239" y="713" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="textEntrance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPO-Er-LGK">
+                                <rect key="frame" x="239" y="759" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="textExit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-Ef-hNA">
+                                <rect key="frame" x="239" y="806" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XqN-hP-qcd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nLs-yR-FP2" firstAttribute="centerX" secondItem="Qb4-SE-Dwg" secondAttribute="centerX" id="0et-u4-O0W"/>
+                            <constraint firstItem="nLs-yR-FP2" firstAttribute="top" secondItem="pbB-TG-OW5" secondAttribute="bottom" constant="15" id="2Rg-jU-MD4"/>
+                            <constraint firstItem="pbB-TG-OW5" firstAttribute="top" secondItem="zXZ-MM-QQ2" secondAttribute="bottom" constant="19" id="5wE-jY-ZvZ"/>
+                            <constraint firstItem="XqN-hP-qcd" firstAttribute="bottom" secondItem="Qb4-SE-Dwg" secondAttribute="bottom" constant="30" id="HNB-yk-tz5"/>
+                            <constraint firstItem="pbB-TG-OW5" firstAttribute="centerX" secondItem="nLs-yR-FP2" secondAttribute="centerX" id="KvG-Gj-Ock"/>
+                            <constraint firstItem="xPO-Er-LGK" firstAttribute="centerY" secondItem="nLs-yR-FP2" secondAttribute="centerY" id="Lxc-8m-3tk"/>
+                            <constraint firstItem="Qb4-SE-Dwg" firstAttribute="leading" secondItem="Dva-Ef-hNA" secondAttribute="trailing" constant="49" id="OLY-0m-c9v"/>
+                            <constraint firstItem="Qb4-SE-Dwg" firstAttribute="top" secondItem="nLs-yR-FP2" secondAttribute="bottom" constant="16" id="OUd-GX-BCh"/>
+                            <constraint firstItem="Dva-Ef-hNA" firstAttribute="centerY" secondItem="Qb4-SE-Dwg" secondAttribute="centerY" id="SH7-Hg-3BN"/>
+                            <constraint firstItem="pbB-TG-OW5" firstAttribute="leading" secondItem="Yq3-SW-gIK" secondAttribute="trailing" constant="46" id="bx7-ct-UJt"/>
+                            <constraint firstItem="XqN-hP-qcd" firstAttribute="trailing" secondItem="Qb4-SE-Dwg" secondAttribute="trailing" constant="20" id="hSC-dQ-Wdg"/>
+                            <constraint firstItem="nLs-yR-FP2" firstAttribute="leading" secondItem="xPO-Er-LGK" secondAttribute="trailing" constant="9" id="i0O-OC-zR0"/>
+                            <constraint firstItem="zXZ-MM-QQ2" firstAttribute="leading" secondItem="HTi-H4-UqF" secondAttribute="trailing" constant="6" id="oad-Bg-IQq"/>
+                            <constraint firstItem="HTi-H4-UqF" firstAttribute="centerY" secondItem="zXZ-MM-QQ2" secondAttribute="centerY" id="uE2-cb-afe"/>
+                            <constraint firstItem="zXZ-MM-QQ2" firstAttribute="centerX" secondItem="pbB-TG-OW5" secondAttribute="centerX" id="x54-61-wxg"/>
+                            <constraint firstItem="Yq3-SW-gIK" firstAttribute="centerY" secondItem="pbB-TG-OW5" secondAttribute="centerY" id="yxD-qX-e0W"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T20-vH-vwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7123" y="3570"/>
+        </scene>
+        <!--Text Style Sample-->
+        <scene sceneID="2Ab-8r-5WF">
+            <objects>
+                <viewController storyboardIdentifier="TextStyleSample" id="9SX-aV-Xfo" customClass="TextStyleSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="svj-fR-lBA" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9Id-Gi-EhI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y1U-kN-ADj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2994" y="621"/>
+        </scene>
+        <!--External Font Sample-->
+        <scene sceneID="4x5-1K-tZw">
+            <objects>
+                <viewController storyboardIdentifier="ExternalFontSample" id="G6g-hf-rOO" customClass="ExternalFontSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="57c-5J-n9z" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fKL-UF-zXU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYb-bd-4Dj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3825" y="621"/>
+        </scene>
+        <!--Position Share Poi Sample-->
+        <scene sceneID="Fgq-kb-8Ya">
+            <objects>
+                <viewController storyboardIdentifier="PositionSharePoiSample" id="v35-OX-Qwi" customClass="PositionSharePoiSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XL0-Y9-fNz" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0J-i1-Ode">
+                                <rect key="frame" x="28" y="832" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="변경"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="v35-OX-Qwi" eventType="touchUpInside" id="q5k-2D-K9C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pmq-Bf-Yh1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqR-w3-3JP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8028" y="3570"/>
+        </scene>
+        <!--ComplexPOI Animation Sample-->
+        <scene sceneID="GHv-Z9-Fee">
+            <objects>
+                <viewController storyboardIdentifier="ComplexPOIAnimationSample" id="Axo-mq-NFI" customClass="ComplexPOIAnimationSample" customModule="KakaoMapsSDK_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q1M-O3-Hxm" customClass="KMViewContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DC8-Ae-2C5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lo-xr-ShM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8836" y="3570"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
