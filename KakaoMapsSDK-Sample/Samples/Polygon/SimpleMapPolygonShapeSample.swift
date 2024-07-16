@@ -23,6 +23,10 @@ class SimpleMapPolygonShapeSample: APISampleBaseViewController {
         print("OK")
         createPolygonStyleSet()
         createMapPolygonShape()
+        createDimPolygonSet()
+        createDimScreenShape()
+        
+        
     }
     
     // MapPolygonShape에 적용할 styleSet을 생성한다.
@@ -67,4 +71,49 @@ class SimpleMapPolygonShapeSample: APISampleBaseViewController {
         let cameraUpdate = CameraUpdate.make(area: AreaRect(points: polygon.exteriorRing))
         mapView.moveCamera(cameraUpdate)
     }
+    
+    func createDimPolygonSet() {
+        let mapView: KakaoMap = mapController?.getView("mapview") as! KakaoMap
+        mapView.dimScreen.isEnabled = true
+        let dimScreen: DimScreen = mapView.dimScreen
+        
+        let shapeStyle = PolygonStyle(styles: [
+            //0~15까지 줌레벨별 폴리곤 스타일을 지정한다.
+            PerLevelPolygonStyle(color: UIColor(red: 0, green: 0, blue: 0, alpha: 0), strokeWidth: 3, strokeColor: UIColor.red, level: 0),
+            PerLevelPolygonStyle(color: UIColor(red: 0, green: 0, blue: 0, alpha: 0), strokeWidth: 3, strokeColor: UIColor.red, level: 15)
+        ])
+        let shapeStyleSet = PolygonStyleSet(styleSetID: "shapeLevelStyle", styles: [shapeStyle]) // styleSetId 는 내가 만들 id를 지정하는 것이고, styles는 shapesytle 객체를 넣어준다는 것이다.
+        
+        dimScreen.addPolygonStyleSet(shapeStyleSet)
+    }
+    
+    func createDimScreenShape() {
+        let mapView: KakaoMap = mapController?.getView("mapview") as! KakaoMap
+        let dimScreen: DimScreen = mapView.dimScreen
+        
+        let viewSize = mapView.viewRect.size
+        let options = MapPolygonShapeOptions(shapeID: "shape1", styleID: "shapeLevelStyle", zOrder: 1)
+        
+        let dimPolygon = [
+            MapPoint(longitude: 127.10656, latitude: 37.40303),
+            MapPoint(longitude: 127.10655, latitude: 37.40301),
+            MapPoint(longitude: 127.10660, latitude: 37.40247),
+            MapPoint(longitude: 127.10938, latitude: 37.40249),
+            MapPoint(longitude: 127.10946, latitude: 37.40253),
+            MapPoint(longitude: 127.10945, latitude: 37.40298)
+        ]
+        
+        let dim = MapPolygon(exteriorRing: dimPolygon, hole: nil, styleIndex: 0)
+        
+        options.polygons.append(dim)
+        
+        
+        let shape = dimScreen.addHighlightMapPolygonShape(options)
+        shape?.show()
+    
+    }
+    
+    
+    
+    
 }
