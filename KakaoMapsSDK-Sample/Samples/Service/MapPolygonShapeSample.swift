@@ -90,8 +90,8 @@ class MapPolygonShapeSample: APISampleBaseViewController {
                             
                             index += 1
                         }
-                        
                         if rc == 1 {
+                            
                             simplePolygon = points
                         }
                         else {
